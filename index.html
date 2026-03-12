@@ -64,7 +64,7 @@
 
         /* ─── NAV DOTS ───────────────────────────── */
         .nav-dots {
-            position: fixed;
+            position: absolute;
             right: 30px;
             top: 50%;
             transform: translateY(-50%);
@@ -165,7 +165,7 @@
         /* ─── SECTION TITLE PATTERN ─────────────── */
         .section-eyebrow {
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
+            font-size: 0.85rem;
             letter-spacing: 0.5em;
             font-weight: 600;
             color: rgba(120,53,15,0.5);
@@ -284,7 +284,7 @@
         }
         .menu-card-desc {
             font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
+            font-size: 15px;
             font-weight: 300;
             color: #451a03;
             line-height: 1.7;
@@ -314,7 +314,7 @@
             font-size: 16px;
             transition: transform 0.3s ease, background 0.3s ease;
         }
-        .menu-card-btn:hover { transform: scale(1.15); background: #78350f; }
+        .menu-card-btn:hover { transform: scale(1.15); background: #fdbfc0; }
 
         /* ─── FEATURED ROW ───────────────────────── */
         .menu-featured {
@@ -337,7 +337,7 @@
         }
         .menu-featured-eyebrow {
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
+            font-size: 0.85rem;
             letter-spacing: 0.5em;
             font-weight: 600;
             color: rgba(255,255,255,0.4);
@@ -352,9 +352,9 @@
             margin-bottom: 20px;
         }
         .menu-featured-desc {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 300;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 400;
             color: rgba(255,255,255,0.65);
             max-width: 340px;
             line-height: 1.8;
@@ -445,15 +445,15 @@
         .value-item:hover .value-icon { border-color: rgba(255,255,255,0.8); color: #fff; }
         .value-title {
             font-family: 'Yellowtail', cursive;
-            font-size: 1.6rem;
+            font-size: 2rem;
             color: #fff;
             margin-bottom: 10px;
         }
         .value-desc {
             font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
+            font-size: 15px;
             font-weight: 300;
-            color: rgba(255,255,255,0.5);
+            color: #070a11;
             line-height: 1.8;
         }
 
@@ -479,9 +479,9 @@
         }
         .footer-brand-tagline {
             font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 300;
-            color: rgba(255,255,255,0.35);
+            color: rgba(255,255,255,0.55);
             line-height: 1.8;
             max-width: 280px;
             margin-bottom: 32px;
@@ -502,9 +502,9 @@
             text-decoration: none;
         }
         .footer-social-btn:hover {
-            border-color: rgba(255,255,255,0.5);
-            color: #fff;
-            background: rgba(255,255,255,0.06);
+            border-color: #e7a7a8;
+            color: #e7a7a8;
+            background: rgba(231,167,168,0.1);
         }
 
         .footer-col-title {
@@ -527,7 +527,7 @@
             transition: color 0.3s;
             cursor: pointer;
         }
-        .footer-link:hover { color: #fff; }
+        .footer-link:hover { color: #7dc8e5; }
 
         /* Newsletter */
         .footer-newsletter-label {
@@ -564,7 +564,7 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-        .footer-newsletter-btn:hover { background: #78350f; }
+        .footer-newsletter-btn:hover { background: #e7a7a8; }
 
         /* Footer Hours Badge */
         .footer-hours-badge {
@@ -652,30 +652,30 @@
     <header>
         <div class="nut-free-ribbon">100% Nut-Free Facility • Baked Fresh Daily • Family Owned</div>
         <nav class="main-nav">
-            <img src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/4326abb3-1118-43b4-4098-e7f0fc5cb700/public" alt="Logo" class="h-20">
-            <div class="hidden lg:flex gap-8 montserrat text-[13px] font-extrabold tracking-widest text-[#7ec8e3]">
+            <img src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/4326abb3-1118-43b4-4098-e7f0fc5cb700/public" alt="Logo" style="height: 104px;">
+            <div class="hidden lg:flex gap-8 montserrat text-[13px] font-extrabold tracking-widest text-[#0c0f16]">
                 <a href="#">HOME</a><a href="#">SEASONAL</a><a href="#">HOLIDAY</a><a href="#">FOOD TRUCK</a><a href="#">CATERING</a>
             </div>
-            <a href="#" class="montserrat border-2 border-[#7ec8e3] px-6 py-2 rounded-full text-[11px] font-extrabold text-[#7ec8e3] hover:bg-[#7ec8e3] hover:text-white transition-all">APPLY ONLINE</a>
+            <a href="#" class="montserrat border-2 border-[#0c0f16] px-6 py-2 rounded-full text-[11px] font-extrabold text-[#0c0f16] hover:bg-[#0c0f16] hover:text-white transition-all">APPLY ONLINE</a>
         </nav>
     </header>
 
     <!-- ─── PARTICLE CANVAS ─── -->
     <canvas id="particle-canvas"></canvas>
 
-    <!-- ─── NAV DOTS ─── -->
-    <div class="nav-dots">
-        <div class="dot-label active" id="dot-0">01 DEPENDABLE</div>
-        <div class="dot-label" id="dot-1">02 SEASONAL</div>
-        <div class="dot-label" id="dot-2">03 HOLIDAY</div>
-        <div class="dot-label" id="dot-3">04 THEME</div>
-    </div>
-
 
     <!-- ══════════════════════════════════════════
          HERO — SCROLL CANVAS
     ═══════════════════════════════════════════ -->
     <div class="master-scroll-container">
+        <!-- ─── NAV DOTS ─── -->
+        <div class="nav-dots">
+            <div class="dot-label active" id="dot-0">01 DEPENDABLE</div>
+            <div class="dot-label" id="dot-1">02 SEASONAL</div>
+            <div class="dot-label" id="dot-2">03 HOLIDAY</div>
+            <div class="dot-label" id="dot-3">04 THEME</div>
+        </div>
+
         <div class="viewport-lock">
 
             <!-- ─ THEME CHAPTER OVERLAY ─ -->
@@ -753,7 +753,7 @@
 
       <div style="position: absolute; bottom: -30px; right: -40px; background: #7ec8e3; color: #ffffff; padding: 35px; border-radius: 4px; z-index: 4; max-width: 320px; box-shadow: 20px 20px 0px #f2a2b1;">
         <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6; margin: 0; font-weight: 300;">
-          <strong style="color: #f2a2b1; display: block; margin-bottom: 8px; font-size: 1.1rem;">Blomer + Ossim</strong>
+          <strong style="color: #3e210e; display: block; margin-bottom: 8px; font-size: 1.1rem;">Blomer + Ossim</strong>
           Blomer is her dad's family name and Ossim is her mom's family name—blending the two together to bring you Blossim Donuts.
         </p>
       </div>
@@ -936,14 +936,14 @@
       </div>
 
       <!-- BLOCK 3: Customization Banner -->
-      <div class="customization-banner" style="background-color: #7ec8e3; padding: 100px 10%; margin: 0 0 80px 0; text-align: center; position: relative;">
-        <p style="text-transform: uppercase; letter-spacing: 0.15em; color: #f2a2b1; font-weight: 700; font-size: 0.9rem; margin-bottom: 20px; font-family: 'Inter', sans-serif;">
+      <div class="customization-banner" style="background-color: #fabec0; padding: 100px 10%; margin: 0 0 80px 0; text-align: center; position: relative;">
+        <p style="text-transform: uppercase; letter-spacing: 0.15em; color: #7dc8e5; font-weight: 700; font-size: 1.2rem; margin-bottom: 20px; font-family: 'Inter', sans-serif;">
           Personalized & Customized Just For You
         </p>
         <h3 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: #ffffff; line-height: 1.2; max-width: 800px; margin: 0 auto 30px auto;">
           Flexible packages for any party size.
         </h3>
-        <p style="font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #dcdcdc; line-height: 1.8; max-width: 700px; margin: 0 auto;">
+        <p style="font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #3e210e; line-height: 1.8; max-width: 700px; margin: 0 auto;">
           We offer two primary package options that can be fully customized for your event or specific space needs. Serve up to 12 different donut flavors alongside our signature cold brew, hot cocoa, fresh juices, and more!
         </p>
       </div>
@@ -1083,9 +1083,9 @@
 
         <div class="reveal">
             <p class="section-eyebrow">What We Make</p>
-            <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:24px;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;">
                 <h2 class="section-title" style="font-size: clamp(3.5rem, 6vw, 6rem);">Everyday<br>Menu</h2>
-                <p class="montserrat text-sm font-light text-[#451a03] max-w-xs" style="padding-bottom: 12px; line-height:1.8;">
+                <p class="montserrat font-light text-[#451a03] max-w-2xl" style="padding-bottom: 12px; line-height:1.8; font-size: 1.15rem;">
                     The classics you can count on every single day. Baked fresh each morning.
                 </p>
             </div>
@@ -1252,9 +1252,9 @@
 
         <div class="reveal">
             <p class="section-eyebrow">Seasonal Selection</p>
-            <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:24px;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;">
                 <h2 class="section-title" style="font-size: clamp(3.5rem, 6vw, 6rem);">Spring<br>Menu</h2>
-                <p class="montserrat text-sm font-light text-[#451a03] max-w-xs" style="padding-bottom: 12px; line-height:1.8;">
+                <p class="montserrat font-light text-[#451a03] max-w-2xl" style="padding-bottom: 12px; line-height:1.8; font-size: 1.15rem;">
                     Fresh flavors that celebrate the season. Available for a limited time.
                 </p>
             </div>
@@ -1405,9 +1405,9 @@
 
         <div class="reveal">
             <p class="section-eyebrow">Beverages</p>
-            <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:24px;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;">
                 <h2 class="section-title" style="font-size: clamp(3.5rem, 6vw, 6rem);">What to<br>Sip</h2>
-                <p class="montserrat text-sm font-light text-[#451a03] max-w-xs" style="padding-bottom: 12px; line-height:1.8;">
+                <p class="montserrat font-light text-[#451a03] max-w-2xl" style="padding-bottom: 12px; line-height:1.8; font-size: 1.15rem;">
                     Specialty drinks crafted to pair perfectly with our sourdough donuts.
                 </p>
             </div>
@@ -1563,13 +1563,13 @@
 
             <!-- Brand Column -->
             <div>
+                <img src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/4326abb3-1118-43b4-4098-e7f0fc5cb700/public" alt="Blossim Donuts Logo" style="height: 104px; margin-bottom: 16px;">
                 <div class="footer-brand-name">Blossim</div>
                 <p class="footer-brand-tagline">Slow-fermented sourdough donuts made every morning with local ingredients and zero shortcuts.</p>
                 <div class="footer-social-row">
-                    <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="footer-social-btn" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="footer-social-btn" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="https://www.instagram.com/blossimdonuts" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/blossimdonuts" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.yelp.com/biz/blossim-donuts-cincinnati-2" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
                 </div>
 
                 <div class="footer-hours-badge" style="margin-top: 32px;">
@@ -1859,6 +1859,9 @@
                     socials.id = 'theme-socials';
                     socials.className = 'theme-social-row';
                     socials.innerHTML = `
+                        <a href="https://www.yelp.com/biz/blossim-donuts-cincinnati-2" target="_blank" rel="noopener">
+                            <img src="https://www.genspark.ai/api/files/s/2bVQZbEV" alt="Yelp" style="width: 65px; height: 65px; filter: contrast(1.6) saturate(1.4) brightness(0.95) drop-shadow(0 0 12px rgba(252,79,19,0.55)); image-rendering: crisp-edges;">
+                        </a>
                         <a href="https://www.instagram.com/blossimdonuts?igsh=MXA2MjdxcGEybDEwYQ==" target="_blank" rel="noopener">
                             <svg width="65" height="65" viewBox="0 0 24 24" fill="none" stroke="#fb4f14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 12px rgba(251,79,20,0.55));">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
