@@ -69,6 +69,7 @@
             top: 50%;
             transform: translateY(-50%);
             z-index: 100;
+            transition: opacity 0.5s ease;
         }
         .dot-label {
             font-family: 'Montserrat', sans-serif;
@@ -90,12 +91,15 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            padding: 0 8%;
+            padding: 120px 8% 40px 8%;
+            gap: 110px;
             overflow: hidden;
         }
         .donut-stage {
             position: absolute;
             right: 3%;
+            top: 50%;
+            transform: translateY(-50%);
             width: 62%;
             display: flex;
             justify-content: center;
@@ -156,6 +160,7 @@
         }
 
         .theme-social-row { display: flex; gap: 30px; align-items: center; justify-content: center; margin-top: 60px; }
+        #theme-socials-container { display: flex; justify-content: center; width: 100%; }
         .theme-social-row a svg { transition: transform 0.3s ease; }
         .theme-social-row a:hover svg { transform: scale(1.15); }
 
@@ -605,7 +610,7 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 10px;
             font-weight: 300;
-            color: rgba(255,255,255,0.2);
+            color: #f1babf;
             letter-spacing: 0.05em;
         }
         .footer-badge {
@@ -614,7 +619,7 @@
             font-weight: 600;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.15);
+            color: #f1babf;
             border: 1px solid rgba(255,255,255,0.08);
             padding: 6px 16px;
             border-radius: 100px;
@@ -681,17 +686,20 @@
             <!-- ─ THEME CHAPTER OVERLAY ─ -->
             <div id="theme-overlay"></div>
 
-            <div class="relative z-10 w-full lg:w-1/2">
+            <div class="relative z-10 w-full lg:w-1/2 text-center">
                 <p id="sub-label" class="montserrat uppercase tracking-[0.5em] text-[12px] font-bold text-[#7ec8e3]/60 mb-3">
                     Baker's Dozen Dependables
                 </p>
                 <h1 id="title" class="yellowtail text-7xl lg:text-[9rem] text-[#feb8ba] leading-[0.9] mb-8">
                     Your Morning,<br>Every Morning
                 </h1>
-                <p id="description" class="montserrat font-medium text-[#451a03] max-w-md mb-12 leading-relaxed text-lg">
+                <p id="description" class="montserrat font-medium text-[#451a03] max-w-md mb-12 leading-relaxed text-lg text-center mx-auto">
                     These are the donuts you can depend on being baked fresh each day. They go fast!
                 </p>
-                <button id="cta-btn">OUR EVERYDAY MENU</button>
+                <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                    <button id="cta-btn">OUR EVERYDAY MENU</button>
+                    <div id="theme-socials-container"></div>
+                </div>
             </div>
 
             <div class="donut-stage">
@@ -1618,7 +1626,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p class="footer-legal">© 2026 Blossim Donuts. All rights reserved. Baked with intention.</p>
+            <p class="footer-legal">© 2026 Blossim Donuts. All rights reserved. Baked with intention by <a href="http://miltonhaines.com" target="_blank" rel="noopener" style="color: #f1babf; text-decoration: none; font-weight: 600; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">MiltonHaines</a>.</p>
             <span class="footer-badge">Est. 2019 · Handmade Daily</span>
         </div>
 
@@ -1846,6 +1854,16 @@
             document.body.style.backgroundColor = d.bg;
             showFlowers = d.flowers;
 
+            /* hide/show nav dots based on slide */
+            const navDots = document.querySelector('.nav-dots');
+            if (i === 1 || i === 2) {
+                navDots.style.opacity = '0';
+                navDots.style.pointerEvents = 'none';
+            } else {
+                navDots.style.opacity = '1';
+                navDots.style.pointerEvents = 'auto';
+            }
+
             /* theme chapter overlay */
             const overlay = document.getElementById('theme-overlay');
             const donutEl = document.getElementById('main-donut');
@@ -1859,9 +1877,6 @@
                     socials.id = 'theme-socials';
                     socials.className = 'theme-social-row';
                     socials.innerHTML = `
-                        <a href="https://www.yelp.com/biz/blossim-donuts-cincinnati-2" target="_blank" rel="noopener">
-                            <img src="https://www.genspark.ai/api/files/s/2bVQZbEV" alt="Yelp" style="width: 65px; height: 65px; filter: contrast(1.6) saturate(1.4) brightness(0.95) drop-shadow(0 0 12px rgba(252,79,19,0.55)); image-rendering: crisp-edges;">
-                        </a>
                         <a href="https://www.instagram.com/blossimdonuts?igsh=MXA2MjdxcGEybDEwYQ==" target="_blank" rel="noopener">
                             <svg width="65" height="65" viewBox="0 0 24 24" fill="none" stroke="#fb4f14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 12px rgba(251,79,20,0.55));">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -1882,7 +1897,12 @@
                                 <path d="M12 5.4c1.4 0 2.6.5 3.6 1.4l2.7-2.7C16.9 2.6 14.6 2 12 2 8.2 2 4.8 4.1 3 7.5l3.5 2.6C7.3 7.1 9.5 5.4 12 5.4z"/>
                             </svg>
                         </a>`;
-                    document.getElementById('cta-btn').after(socials);
+                    const container = document.getElementById('theme-socials-container');
+                    if (container) {
+                        container.appendChild(socials);
+                    } else {
+                        document.getElementById('cta-btn').after(socials);
+                    }
                 }
                 document.getElementById('theme-socials').style.display = 'flex';
             } else {
