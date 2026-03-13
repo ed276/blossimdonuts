@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blossim Donuts</title>
+    <title>Blossim Donuts | Heritage Master</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Yellowtail&family=Grand+Hotel&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -46,12 +46,37 @@
             background-color: var(--blossim-choc);
             color: white;
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.3em;
-            text-align: center;
-            padding: 8px 0;
-            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 20px 0;
+            text-transform: none;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+        }
+        .nut-free-scroll {
+            display: inline-flex;
+            align-items: center;
+            gap: 60px;
+            animation: scroll-left 25s linear infinite;
+            will-change: transform;
+        }
+        .nut-free-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 24px;
+            padding-right: 80px;
+        }
+        .nut-free-icon {
+            width: 55px;
+            height: 55px;
+            flex-shrink: 0;
+            filter: drop-shadow(0 2px 6px rgba(255,255,255,0.25));
+        }
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-33.333%); }
         }
         .main-nav {
             background: rgba(254, 184, 186, 0.9);
@@ -64,12 +89,11 @@
 
         /* ─── NAV DOTS ───────────────────────────── */
         .nav-dots {
-            position: absolute;
+            position: fixed;
             right: 30px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 100;
-            transition: opacity 0.5s ease;
         }
         .dot-label {
             font-family: 'Montserrat', sans-serif;
@@ -91,15 +115,12 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 8% 40px 8%;
-            gap: 110px;
+            padding: 0 8%;
             overflow: hidden;
         }
         .donut-stage {
             position: absolute;
             right: 3%;
-            top: 50%;
-            transform: translateY(-50%);
             width: 62%;
             display: flex;
             justify-content: center;
@@ -139,6 +160,18 @@
         }
         #theme-overlay.active { opacity: 1; pointer-events: auto; }
 
+        /* ─── THEME SLIDE SPACING IMPROVEMENTS ─── */
+        #theme-overlay.active ~ .hero-slide-wrapper #sub-label {
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+        #theme-overlay.active ~ .hero-slide-wrapper #title {
+            margin-bottom: 40px;
+        }
+        #theme-overlay.active ~ .hero-slide-wrapper #description {
+            margin-bottom: 50px;
+        }
+
         /* ─── CTA BUTTON — uniform oversized standard ─── */
         #cta-btn {
             display: inline-block;
@@ -159,8 +192,7 @@
             line-height: 1;
         }
 
-        .theme-social-row { display: flex; gap: 30px; align-items: center; justify-content: center; margin-top: 60px; }
-        #theme-socials-container { display: flex; justify-content: center; width: 100%; }
+        .theme-social-row { display: flex; gap: 30px; align-items: center; justify-content: flex-start; margin-top: 80px; }
         .theme-social-row a svg { transition: transform 0.3s ease; }
         .theme-social-row a:hover svg { transform: scale(1.15); }
 
@@ -170,7 +202,7 @@
         /* ─── SECTION TITLE PATTERN ─────────────── */
         .section-eyebrow {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
+            font-size: 10px;
             letter-spacing: 0.5em;
             font-weight: 600;
             color: rgba(120,53,15,0.5);
@@ -289,7 +321,7 @@
         }
         .menu-card-desc {
             font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
+            font-size: 12px;
             font-weight: 300;
             color: #451a03;
             line-height: 1.7;
@@ -319,7 +351,7 @@
             font-size: 16px;
             transition: transform 0.3s ease, background 0.3s ease;
         }
-        .menu-card-btn:hover { transform: scale(1.15); background: #fdbfc0; }
+        .menu-card-btn:hover { transform: scale(1.15); background: #78350f; }
 
         /* ─── FEATURED ROW ───────────────────────── */
         .menu-featured {
@@ -342,7 +374,7 @@
         }
         .menu-featured-eyebrow {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
+            font-size: 10px;
             letter-spacing: 0.5em;
             font-weight: 600;
             color: rgba(255,255,255,0.4);
@@ -357,9 +389,9 @@
             margin-bottom: 20px;
         }
         .menu-featured-desc {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 400;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
             color: rgba(255,255,255,0.65);
             max-width: 340px;
             line-height: 1.8;
@@ -423,6 +455,87 @@
         /* ── About / Owner – styles provided by client ── */
         /* placeholder — will be replaced with client CSS */
 
+        /* ─── FIND US SECTION ──────────────────────── */
+        .find-us-section {
+            background: var(--cream);
+            padding: 100px 8%;
+        }
+        .find-us-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            height: 500px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .location-info h2 {
+            font-family: 'Yellowtail', cursive;
+            font-size: clamp(3.5rem, 5vw, 5rem);
+            color: var(--amber-950);
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .location-address {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            color: #451a03;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .location-hours-badge {
+            background: rgba(126,200,227,0.1);
+            border-left: 4px solid var(--amber-950);
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        .location-hours-badge h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--amber-950);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .location-hours-badge p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #451a03;
+            margin: 0;
+        }
+        .directions-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--amber-950);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(126,200,227,0.3);
+        }
+        .directions-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(126,200,227,0.4);
+        }
+
         /* ─── VALUES STRIP ───────────────────────── */
         .values-strip {
             background: var(--amber-950);
@@ -450,15 +563,15 @@
         .value-item:hover .value-icon { border-color: rgba(255,255,255,0.8); color: #fff; }
         .value-title {
             font-family: 'Yellowtail', cursive;
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: #fff;
             margin-bottom: 10px;
         }
         .value-desc {
             font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
+            font-size: 11px;
             font-weight: 300;
-            color: #070a11;
+            color: rgba(255,255,255,0.5);
             line-height: 1.8;
         }
 
@@ -484,9 +597,9 @@
         }
         .footer-brand-tagline {
             font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
+            font-size: 11px;
             font-weight: 300;
-            color: rgba(255,255,255,0.55);
+            color: rgba(255,255,255,0.35);
             line-height: 1.8;
             max-width: 280px;
             margin-bottom: 32px;
@@ -507,9 +620,9 @@
             text-decoration: none;
         }
         .footer-social-btn:hover {
-            border-color: #e7a7a8;
-            color: #e7a7a8;
-            background: rgba(231,167,168,0.1);
+            border-color: rgba(255,255,255,0.5);
+            color: #fff;
+            background: rgba(255,255,255,0.06);
         }
 
         .footer-col-title {
@@ -532,7 +645,41 @@
             transition: color 0.3s;
             cursor: pointer;
         }
-        .footer-link:hover { color: #7dc8e5; }
+        .footer-link:hover { color: #fff; }
+
+        /* Careers Section */
+        .footer-careers-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 12px;
+            margin-top: 24px;
+            line-height: 1.6;
+        }
+        .footer-careers-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--blossim-pink) 0%, #f2a2b1 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 20px rgba(242,162,177,0.4);
+            width: 100%;
+        }
+        .footer-careers-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(242,162,177,0.6);
+        }
 
         /* Newsletter */
         .footer-newsletter-label {
@@ -569,33 +716,33 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-        .footer-newsletter-btn:hover { background: #e7a7a8; }
+        .footer-newsletter-btn:hover { background: #78350f; }
 
         /* Footer Hours Badge */
         .footer-hours-badge {
-            margin-top: 24px;
+            margin-top: 20px;
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px;
-            padding: 16px 20px;
+            border-radius: 10px;
+            padding: 12px 16px;
         }
         .footer-hours-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
+            font-size: 8px;
             letter-spacing: 0.35em;
             font-weight: 600;
             text-transform: uppercase;
             color: rgba(255,255,255,0.25);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .footer-hours-row {
             display: flex;
             justify-content: space-between;
             font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
+            font-size: 10px;
             color: rgba(255,255,255,0.45);
             font-weight: 300;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
         .footer-hours-row span:last-child { color: rgba(255,255,255,0.7); }
 
@@ -610,7 +757,7 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 10px;
             font-weight: 300;
-            color: #f1babf;
+            color: rgba(255,255,255,0.2);
             letter-spacing: 0.05em;
         }
         .footer-badge {
@@ -619,7 +766,7 @@
             font-weight: 600;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: #f1babf;
+            color: rgba(255,255,255,0.15);
             border: 1px solid rgba(255,255,255,0.08);
             padding: 6px 16px;
             border-radius: 100px;
@@ -643,11 +790,18 @@
             .drinks-grid { grid-template-columns: 1fr; }
             .footer-top { grid-template-columns: 1fr; }
             .values-grid { grid-template-columns: 1fr; }
+            .find-us-grid { grid-template-columns: 1fr; gap: 40px; }
+            .map-container { height: 350px; }
+            .location-info h2 { font-size: 3rem; }
             .section-pad { padding: 80px 6%; }
             .story-stat-row { grid-template-columns: 1fr 1fr; }
             .story-quote-block { position: static; margin-top: 24px; max-width: 100%; }
             .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
             .nav-dots { display: none; }
+            .nut-free-ribbon { padding: 14px 0; font-size: 11px; }
+            .nut-free-icon { width: 42px; height: 42px; }
+            .nut-free-item { gap: 16px; padding-right: 50px; }
+            .nut-free-scroll { gap: 40px; }
         }
     </style>
 </head>
@@ -655,51 +809,70 @@
 
     <!-- ─── FIXED HEADER ─── -->
     <header>
-        <div class="nut-free-ribbon">100% Nut-Free Facility • Baked Fresh Daily • Family Owned</div>
-        <nav class="main-nav">
-            <img src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/4326abb3-1118-43b4-4098-e7f0fc5cb700/public" alt="Logo" style="height: 104px;">
-            <div class="hidden lg:flex gap-8 montserrat text-[13px] font-extrabold tracking-widest text-[#0c0f16]">
-                <a href="#">HOME</a><a href="#">SEASONAL</a><a href="#">HOLIDAY</a><a href="#">FOOD TRUCK</a><a href="#">CATERING</a>
+        <div class="nut-free-ribbon">
+            <div class="nut-free-scroll">
+                <!-- First instance -->
+                <div class="nut-free-item">
+                    <img src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/eefe19aa-9ba4-41af-8562-806193e9d400/w=2400,fit=scale-down,format=png" alt="Nut Free" class="nut-free-icon">
+                    <span>Yes, we are a Nut free Facility (peanut & tree nut). We purchase our products from facilities that have dedicated lines for nut allergies so we ensure there is no cross contamination.</span>
+                </div>
+                <!-- Second instance (for seamless loop) -->
+                <div class="nut-free-item">
+                    <img src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/eefe19aa-9ba4-41af-8562-806193e9d400/w=2400,fit=scale-down,format=png" alt="Nut Free" class="nut-free-icon">
+                    <span>Yes, we are a Nut free Facility (peanut & tree nut). We purchase our products from facilities that have dedicated lines for nut allergies so we ensure there is no cross contamination.</span>
+                </div>
+                <!-- Third instance (for truly seamless loop) -->
+                <div class="nut-free-item">
+                    <img src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/eefe19aa-9ba4-41af-8562-806193e9d400/w=2400,fit=scale-down,format=png" alt="Nut Free" class="nut-free-icon">
+                    <span>Yes, we are a Nut free Facility (peanut & tree nut). We purchase our products from facilities that have dedicated lines for nut allergies so we ensure there is no cross contamination.</span>
+                </div>
             </div>
-            <a href="#" class="montserrat border-2 border-[#0c0f16] px-6 py-2 rounded-full text-[11px] font-extrabold text-[#0c0f16] hover:bg-[#0c0f16] hover:text-white transition-all">APPLY ONLINE</a>
+        </div>
+        <nav class="main-nav">
+            <img src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/4326abb3-1118-43b4-4098-e7f0fc5cb700/public" alt="Logo" class="h-20">
+            <div class="hidden lg:flex gap-8 montserrat text-[13px] font-extrabold tracking-widest text-white">
+                <a href="#" class="hover:text-[#7ec8e3] transition-colors">HOME</a>
+                <a href="#" class="hover:text-[#7ec8e3] transition-colors">SEASONAL</a>
+                <a href="#" class="hover:text-[#7ec8e3] transition-colors">HOLIDAY</a>
+                <a href="#" class="hover:text-[#7ec8e3] transition-colors">FOOD TRUCK</a>
+                <a href="#" class="hover:text-[#7ec8e3] transition-colors">CATERING</a>
+            </div>
+            <a href="tel:+15137450090" class="montserrat border-2 border-white px-6 py-2 rounded-full text-[11px] font-extrabold text-white hover:bg-[#7ec8e3] hover:border-[#7ec8e3] transition-all">📞 (513) 745-0090</a>
         </nav>
     </header>
 
     <!-- ─── PARTICLE CANVAS ─── -->
     <canvas id="particle-canvas"></canvas>
 
+    <!-- ─── NAV DOTS ─── -->
+    <div class="nav-dots">
+        <div class="dot-label active" id="dot-0">01 DEPENDABLE</div>
+        <div class="dot-label" id="dot-1">02 SEASONAL</div>
+        <div class="dot-label" id="dot-2">03 HOLIDAY</div>
+        <div class="dot-label" id="dot-3">04 THEME</div>
+    </div>
+
 
     <!-- ══════════════════════════════════════════
          HERO — SCROLL CANVAS
     ═══════════════════════════════════════════ -->
     <div class="master-scroll-container">
-        <!-- ─── NAV DOTS ─── -->
-        <div class="nav-dots">
-            <div class="dot-label active" id="dot-0">01 DEPENDABLE</div>
-            <div class="dot-label" id="dot-1">02 SEASONAL</div>
-            <div class="dot-label" id="dot-2">03 HOLIDAY</div>
-            <div class="dot-label" id="dot-3">04 THEME</div>
-        </div>
-
         <div class="viewport-lock">
 
             <!-- ─ THEME CHAPTER OVERLAY ─ -->
             <div id="theme-overlay"></div>
 
-            <div class="relative z-10 w-full lg:w-1/2 text-center">
+            <div class="relative z-10 w-full lg:w-1/2">
                 <p id="sub-label" class="montserrat uppercase tracking-[0.5em] text-[12px] font-bold text-[#7ec8e3]/60 mb-3">
                     Baker's Dozen Dependables
                 </p>
                 <h1 id="title" class="yellowtail text-7xl lg:text-[9rem] text-[#feb8ba] leading-[0.9] mb-8">
                     Your Morning,<br>Every Morning
                 </h1>
-                <p id="description" class="montserrat font-medium text-[#451a03] max-w-md mb-12 leading-relaxed text-lg text-center mx-auto">
+                <p id="description" class="montserrat font-medium text-[#451a03] max-w-md mb-12 leading-relaxed text-lg">
                     These are the donuts you can depend on being baked fresh each day. They go fast!
                 </p>
-                <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-                    <button id="cta-btn">OUR EVERYDAY MENU</button>
-                    <div id="theme-socials-container"></div>
-                </div>
+                <button id="cta-btn">OUR EVERYDAY MENU</button>
             </div>
 
             <div class="donut-stage">
@@ -761,7 +934,7 @@
 
       <div style="position: absolute; bottom: -30px; right: -40px; background: #7ec8e3; color: #ffffff; padding: 35px; border-radius: 4px; z-index: 4; max-width: 320px; box-shadow: 20px 20px 0px #f2a2b1;">
         <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6; margin: 0; font-weight: 300;">
-          <strong style="color: #3e210e; display: block; margin-bottom: 8px; font-size: 1.1rem;">Blomer + Ossim</strong>
+          <strong style="color: #f2a2b1; display: block; margin-bottom: 8px; font-size: 1.1rem;">Blomer + Ossim</strong>
           Blomer is her dad's family name and Ossim is her mom's family name—blending the two together to bring you Blossim Donuts.
         </p>
       </div>
@@ -944,14 +1117,14 @@
       </div>
 
       <!-- BLOCK 3: Customization Banner -->
-      <div class="customization-banner" style="background-color: #fabec0; padding: 100px 10%; margin: 0 0 80px 0; text-align: center; position: relative;">
-        <p style="text-transform: uppercase; letter-spacing: 0.15em; color: #7dc8e5; font-weight: 700; font-size: 1.2rem; margin-bottom: 20px; font-family: 'Inter', sans-serif;">
+      <div class="customization-banner" style="background-color: #7ec8e3; padding: 100px 10%; margin: 0 0 80px 0; text-align: center; position: relative;">
+        <p style="text-transform: uppercase; letter-spacing: 0.15em; color: #f2a2b1; font-weight: 700; font-size: 0.9rem; margin-bottom: 20px; font-family: 'Inter', sans-serif;">
           Personalized & Customized Just For You
         </p>
         <h3 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: #ffffff; line-height: 1.2; max-width: 800px; margin: 0 auto 30px auto;">
           Flexible packages for any party size.
         </h3>
-        <p style="font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #3e210e; line-height: 1.8; max-width: 700px; margin: 0 auto;">
+        <p style="font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #dcdcdc; line-height: 1.8; max-width: 700px; margin: 0 auto;">
           We offer two primary package options that can be fully customized for your event or specific space needs. Serve up to 12 different donut flavors alongside our signature cold brew, hot cocoa, fresh juices, and more!
         </p>
       </div>
@@ -1091,9 +1264,9 @@
 
         <div class="reveal">
             <p class="section-eyebrow">What We Make</p>
-            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;">
+            <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:24px;">
                 <h2 class="section-title" style="font-size: clamp(3.5rem, 6vw, 6rem);">Everyday<br>Menu</h2>
-                <p class="montserrat font-light text-[#451a03] max-w-2xl" style="padding-bottom: 12px; line-height:1.8; font-size: 1.15rem;">
+                <p class="montserrat text-sm font-light text-[#451a03] max-w-xs" style="padding-bottom: 12px; line-height:1.8;">
                     The classics you can count on every single day. Baked fresh each morning.
                 </p>
             </div>
@@ -1260,9 +1433,9 @@
 
         <div class="reveal">
             <p class="section-eyebrow">Seasonal Selection</p>
-            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;">
+            <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:24px;">
                 <h2 class="section-title" style="font-size: clamp(3.5rem, 6vw, 6rem);">Spring<br>Menu</h2>
-                <p class="montserrat font-light text-[#451a03] max-w-2xl" style="padding-bottom: 12px; line-height:1.8; font-size: 1.15rem;">
+                <p class="montserrat text-sm font-light text-[#451a03] max-w-xs" style="padding-bottom: 12px; line-height:1.8;">
                     Fresh flavors that celebrate the season. Available for a limited time.
                 </p>
             </div>
@@ -1413,9 +1586,9 @@
 
         <div class="reveal">
             <p class="section-eyebrow">Beverages</p>
-            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;">
+            <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:24px;">
                 <h2 class="section-title" style="font-size: clamp(3.5rem, 6vw, 6rem);">What to<br>Sip</h2>
-                <p class="montserrat font-light text-[#451a03] max-w-2xl" style="padding-bottom: 12px; line-height:1.8; font-size: 1.15rem;">
+                <p class="montserrat text-sm font-light text-[#451a03] max-w-xs" style="padding-bottom: 12px; line-height:1.8;">
                     Specialty drinks crafted to pair perfectly with our sourdough donuts.
                 </p>
             </div>
@@ -1527,6 +1700,165 @@
 
 
     <!-- ══════════════════════════════════════════
+         CATERING & EVENTS
+    ═══════════════════════════════════════════ -->
+    <section id="catering" style="padding: 120px 10%; background-color: #FCF9F6; position: relative;">
+  
+      <div style="display: flex; gap: 80px; align-items: flex-start;">
+    
+        <div style="flex: 1;">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+            <div style="width: 40px; height: 1px; background: #f2a2b1;"></div>
+            <span style="text-transform: uppercase; letter-spacing: 0.2em; color: #f2a2b1; font-weight: 700; font-size: 0.85rem; font-family: 'Inter', sans-serif;">Catering & Events</span>
+          </div>
+
+          <h2 style="font-size: 4.5rem; color: #7ec8e3; line-height: 1.1; margin-bottom: 40px; font-family: 'Yellowtail', cursive; letter-spacing: -0.02em;">
+            Elevate Your <br><span style="color: #f2a2b1; font-style: italic;">Next Event.</span>
+          </h2>
+
+          <div style="width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; margin-bottom: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.06);">
+            <img src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/e2b7cf92-32e3-45c8-089b-b495142f7f00/public" alt="Blossim Catering Spread" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+        
+            <div>
+              <h4 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #7ec8e3; margin-bottom: 8px;">No Minimums</h4>
+              <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #451a03; line-height: 1.6;">Whether it's an intimate gathering or a massive corporate event, there are no order minimums.</p>
+            </div>
+
+            <div>
+              <h4 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #7ec8e3; margin-bottom: 8px;">Storefront Pick-up</h4>
+              <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #451a03; line-height: 1.6;">Orders are boxed up in our 6-dozen or 1-dozen boxes and ready for pickup at our Montgomery location.</p>
+            </div>
+
+            <div>
+              <h4 style="font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #7ec8e3; margin-bottom: 8px;">Coffee & Cold Brew</h4>
+              <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #451a03; line-height: 1.6;">Add large reusable thermos carafes of our hot coffee or cold brew. (Just drop the thermos back off after!).</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="flex: 1;">
+          <div style="background: #ffffff; padding: 50px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.05);">
+        
+            <h3 style="font-family: 'Yellowtail', cursive; font-size: 2.5rem; color: #7ec8e3; margin-bottom: 10px;">Request a Quote</h3>
+            <p style="font-family: 'Inter', sans-serif; color: #451a03; margin-bottom: 30px; font-size: 0.95rem;">We will call or email to confirm your booking and answer any questions.</p>
+
+            <div style="background: #FFF0F0; border-left: 4px solid #EB1700; padding: 15px 20px; margin-bottom: 30px; border-radius: 0 4px 4px 0;">
+              <p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #EB1700; margin: 0; font-weight: 600;">
+                Ordering within 48 hours of your event? Please skip the form and call the store directly at 513-745-0090 to place your order.
+              </p>
+            </div>
+
+            <form action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST" style="font-family: 'Inter', sans-serif;">
+          
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                <div style="display: flex; flex-direction: column;">
+                  <label style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #a09393; margin-bottom: 8px; font-weight: 600;">First Name *</label>
+                  <input type="text" name="first_name" required style="border: none; border-bottom: 2px solid #eee; padding: 8px 0; font-size: 1rem; color: #7ec8e3; outline: none;" onfocus="this.style.borderColor='#f2a2b1'" onblur="this.style.borderColor='#eee'">
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                  <label style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #a09393; margin-bottom: 8px; font-weight: 600;">Last Name *</label>
+                  <input type="text" name="last_name" required style="border: none; border-bottom: 2px solid #eee; padding: 8px 0; font-size: 1rem; color: #7ec8e3; outline: none;" onfocus="this.style.borderColor='#f2a2b1'" onblur="this.style.borderColor='#eee'">
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                  <label style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #a09393; margin-bottom: 8px; font-weight: 600;">Email *</label>
+                  <input type="email" name="email" required style="border: none; border-bottom: 2px solid #eee; padding: 8px 0; font-size: 1rem; color: #7ec8e3; outline: none;" onfocus="this.style.borderColor='#f2a2b1'" onblur="this.style.borderColor='#eee'">
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                  <label style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #a09393; margin-bottom: 8px; font-weight: 600;">Phone *</label>
+                  <input type="tel" name="phone" required style="border: none; border-bottom: 2px solid #eee; padding: 8px 0; font-size: 1rem; color: #7ec8e3; outline: none;" onfocus="this.style.borderColor='#f2a2b1'" onblur="this.style.borderColor='#eee'">
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                <div style="display: flex; flex-direction: column;">
+                  <label style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #a09393; margin-bottom: 8px; font-weight: 600;">Requested Date *</label>
+                  <input type="date" name="date" required style="border: none; border-bottom: 2px solid #eee; padding: 8px 0; font-size: 1rem; color: #7ec8e3; outline: none;" onfocus="this.style.borderColor='#f2a2b1'" onblur="this.style.borderColor='#eee'">
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                  <label style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #a09393; margin-bottom: 8px; font-weight: 600;">Pick-up Time *</label>
+                  <input type="time" name="time" required style="border: none; border-bottom: 2px solid #eee; padding: 8px 0; font-size: 1rem; color: #7ec8e3; outline: none;" onfocus="this.style.borderColor='#f2a2b1'" onblur="this.style.borderColor='#eee'">
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin-bottom: 30px;">
+                <label style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #a09393; margin-bottom: 8px; font-weight: 600;">Event Type (Wedding, Corporate, etc.) *</label>
+                <input type="text" name="event_type" required style="border: none; border-bottom: 2px solid #eee; padding: 8px 0; font-size: 1rem; color: #7ec8e3; outline: none;" onfocus="this.style.borderColor='#f2a2b1'" onblur="this.style.borderColor='#eee'">
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin-bottom: 30px;">
+                <label style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #a09393; margin-bottom: 8px; font-weight: 600;">Donut & Drink Quantities *</label>
+                <input type="text" name="quantities" placeholder="e.g., 6 dozen donuts, 2 cold brews" required style="border: none; border-bottom: 2px solid #eee; padding: 8px 0; font-size: 1rem; color: #7ec8e3; outline: none;" onfocus="this.style.borderColor='#f2a2b1'" onblur="this.style.borderColor='#eee'">
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin-bottom: 40px;">
+                <label style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #a09393; margin-bottom: 8px; font-weight: 600;">Flavor Requests & Details</label>
+                <textarea name="flavors" rows="2" style="border: none; border-bottom: 2px solid #eee; padding: 8px 0; font-size: 1rem; color: #7ec8e3; resize: none; outline: none;" onfocus="this.style.borderColor='#f2a2b1'" onblur="this.style.borderColor='#eee'" placeholder="Specific flavors, box splitting requests..."></textarea>
+              </div>
+
+              <button type="submit" style="background: #7ec8e3; color: #fff; padding: 18px 40px; width: 100%; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; cursor: pointer; border: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                Submit Catering Request
+              </button>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         FIND US SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="find-us-section">
+        <div class="find-us-grid">
+            
+            <!-- Google Map -->
+            <div class="map-container reveal">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3090.796712985347!2d-84.3609684!3d39.2456859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3c8e8e8e8e9%3A0x9c8f8e8e8e8e8e8e!2s9797%20Montgomery%20Rd%2C%20Montgomery%2C%20OH%2045242!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <!-- Location Info -->
+            <div class="location-info reveal">
+                <h2>Find Us</h2>
+                <p class="location-address">
+                    📍 9797 Montgomery Rd<br>
+                    Montgomery, OH 45242
+                </p>
+
+                <div class="location-hours-badge">
+                    <h4>Store Hours</h4>
+                    <p>
+                        <strong>Tuesday – Friday:</strong> 6:00 AM – 4:00 PM<br>
+                        <strong>Saturday:</strong> 6:00 AM – 4:00 PM<br>
+                        <strong>Sunday:</strong> 6:00 AM – 12:00 PM<br>
+                        <strong>Monday:</strong> Closed
+                    </p>
+                </div>
+
+                <a href="https://www.google.com/maps/dir//9797+Montgomery+Rd,+Montgomery,+OH+45242" target="_blank" class="directions-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Get Directions
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
     ═══════════════════════════════════════════ -->
     <div class="values-strip">
         <div class="values-grid">
@@ -1571,20 +1903,30 @@
 
             <!-- Brand Column -->
             <div>
-                <img src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/4326abb3-1118-43b4-4098-e7f0fc5cb700/public" alt="Blossim Donuts Logo" style="height: 104px; margin-bottom: 16px;">
                 <div class="footer-brand-name">Blossim</div>
                 <p class="footer-brand-tagline">Slow-fermented sourdough donuts made every morning with local ingredients and zero shortcuts.</p>
                 <div class="footer-social-row">
-                    <a href="https://www.instagram.com/blossimdonuts" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/blossimdonuts" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.yelp.com/biz/blossim-donuts-cincinnati-2" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                    <a href="https://www.instagram.com/blossimdonuts?igsh=MXA2MjdxcGEybDEwYQ==" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/blossimdonuts/" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.google.com/search?q=blossim+donuts+montgomery+oh" target="_blank" class="footer-social-btn" aria-label="Google">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21.8 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.5c-.2 1.2-1 2.3-2.1 3v2.5h3.4c2-1.8 3-4.5 3-7.2z"/>
+                            <path d="M12 22c2.7 0 5-.9 6.7-2.4l-3.4-2.5c-.9.6-2 1-3.3 1-2.5 0-4.7-1.7-5.5-4H3v2.6C4.8 19.9 8.2 22 12 22z"/>
+                            <path d="M6.5 14.1c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.5H3C2.3 8.9 2 10.4 2 12s.3 3.1 1 4.5l3.5-2.4z"/>
+                            <path d="M12 5.4c1.4 0 2.6.5 3.6 1.4l2.7-2.7C16.9 2.6 14.6 2 12 2 8.2 2 4.8 4.1 3 7.5l3.5 2.6C7.3 7.1 9.5 5.4 12 5.4z"/>
+                        </svg>
+                    </a>
                 </div>
 
                 <div class="footer-hours-badge" style="margin-top: 32px;">
-                    <div class="footer-hours-title">Today's Hours</div>
-                    <div class="footer-hours-row"><span>Mon — Fri</span><span>7:00 AM – 3:00 PM</span></div>
-                    <div class="footer-hours-row"><span>Saturday</span><span>7:00 AM – 2:00 PM</span></div>
-                    <div class="footer-hours-row"><span>Sunday</span><span>8:00 AM – 1:00 PM</span></div>
+                    <div class="footer-hours-title">Store Hours</div>
+                    <div class="footer-hours-row"><span>Monday</span><span>Closed</span></div>
+                    <div class="footer-hours-row"><span>Tuesday</span><span>6:00 AM – 4:00 PM</span></div>
+                    <div class="footer-hours-row"><span>Wednesday</span><span>6:00 AM – 4:00 PM</span></div>
+                    <div class="footer-hours-row"><span>Thursday</span><span>6:00 AM – 4:00 PM</span></div>
+                    <div class="footer-hours-row"><span>Friday</span><span>6:00 AM – 4:00 PM</span></div>
+                    <div class="footer-hours-row"><span>Saturday</span><span>6:00 AM – 4:00 PM</span></div>
+                    <div class="footer-hours-row"><span>Sunday</span><span>6:00 AM – 12:00 PM</span></div>
                 </div>
             </div>
 
@@ -1606,8 +1948,7 @@
                 <a class="footer-link">Catering & Events</a>
                 <a class="footer-link">Wholesale Inquiry</a>
                 <a class="footer-link">Our Story</a>
-                <a class="footer-link">Press & Media</a>
-                <a class="footer-link">Careers</a>
+                <a href="https://www.cincinnatimagazine.com/article/find-sweet-savings-for-national-doughnut-day/" target="_blank" class="footer-link">Press & Media 📰</a>
             </div>
 
             <!-- Newsletter Column -->
@@ -1621,12 +1962,18 @@
                 <p style="font-family:'Montserrat',sans-serif; font-size:10px; color:rgba(255,255,255,0.2); margin-top:12px; line-height:1.7;">
                     We only email when it matters. Unsubscribe any time.
                 </p>
+                
+                <!-- Careers Section -->
+                <p class="footer-careers-label">Looking for a sweet gig?</p>
+                <a href="#careers" class="footer-careers-btn">
+                    APPLY NOW
+                </a>
             </div>
 
         </div>
 
         <div class="footer-bottom">
-            <p class="footer-legal">© 2026 Blossim Donuts. All rights reserved. Baked with intention by <a href="http://miltonhaines.com" target="_blank" rel="noopener" style="color: #f1babf; text-decoration: none; font-weight: 600; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">MiltonHaines</a>.</p>
+            <p class="footer-legal">© 2026 Blossim Donuts. All rights reserved. Baked with intention.</p>
             <span class="footer-badge">Est. 2019 · Handmade Daily</span>
         </div>
 
@@ -1854,16 +2201,6 @@
             document.body.style.backgroundColor = d.bg;
             showFlowers = d.flowers;
 
-            /* hide/show nav dots based on slide */
-            const navDots = document.querySelector('.nav-dots');
-            if (i === 1 || i === 2) {
-                navDots.style.opacity = '0';
-                navDots.style.pointerEvents = 'none';
-            } else {
-                navDots.style.opacity = '1';
-                navDots.style.pointerEvents = 'auto';
-            }
-
             /* theme chapter overlay */
             const overlay = document.getElementById('theme-overlay');
             const donutEl = document.getElementById('main-donut');
@@ -1897,12 +2234,7 @@
                                 <path d="M12 5.4c1.4 0 2.6.5 3.6 1.4l2.7-2.7C16.9 2.6 14.6 2 12 2 8.2 2 4.8 4.1 3 7.5l3.5 2.6C7.3 7.1 9.5 5.4 12 5.4z"/>
                             </svg>
                         </a>`;
-                    const container = document.getElementById('theme-socials-container');
-                    if (container) {
-                        container.appendChild(socials);
-                    } else {
-                        document.getElementById('cta-btn').after(socials);
-                    }
+                    document.getElementById('cta-btn').after(socials);
                 }
                 document.getElementById('theme-socials').style.display = 'flex';
             } else {
@@ -2010,6 +2342,54 @@
                 truckObserver.observe(foodTruckSection);
             }
         }
+    </script>
+
+    <!-- ══════════════════════════════════════════
+         STRUCTURED DATA (SEO)
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "Blossim Donuts",
+      "description": "Slow-fermented sourdough donuts made fresh daily with local ingredients. 100% nut-free facility in Montgomery, Ohio.",
+      "image": "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/4326abb3-1118-43b4-4098-e7f0fc5cb700/public",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9797 Montgomery Rd",
+        "addressLocality": "Montgomery",
+        "addressRegion": "OH",
+        "postalCode": "45242",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.244581",
+        "longitude": "-84.358449"
+      },
+      "telephone": "+15137450090",
+      "email": "info@blossimdonuts.com",
+      "url": "https://www.blossimdonuts.com",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "06:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "06:00",
+          "closes": "12:00"
+        }
+      ],
+      "priceRange": "$$",
+      "servesCuisine": "Bakery, Donuts, Coffee",
+      "menu": "https://www.blossimdonuts.com/#menu",
+      "acceptsReservations": "False",
+      "hasMenu": "https://www.blossimdonuts.com/#menu"
+    }
     </script>
 
 </body>
