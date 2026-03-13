@@ -103,7 +103,8 @@
             margin-bottom: 1.5rem;
             opacity: 0.3;
             transition: 0.3s;
-            cursor: pointer;
+            cursor: default;
+            pointer-events: none;
         }
         .dot-label.active { opacity: 1; font-weight: 700; color: var(--blossim-choc); }
 
@@ -305,8 +306,8 @@
         .menu-card-body { padding: 24px 24px 28px; }
         .menu-card-category {
             font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            letter-spacing: 0.35em;
+            font-size: 10px;
+            letter-spacing: 0.5em;
             font-weight: 600;
             color: rgba(120,53,15,0.45);
             text-transform: uppercase;
@@ -351,7 +352,7 @@
             font-size: 16px;
             transition: transform 0.3s ease, background 0.3s ease;
         }
-        .menu-card-btn:hover { transform: scale(1.15); background: #78350f; }
+        .menu-card-btn:hover { transform: scale(1.15); background: #fdbfc0; }
 
         /* ─── FEATURED ROW ───────────────────────── */
         .menu-featured {
@@ -390,10 +391,10 @@
         }
         .menu-featured-desc {
             font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 300;
-            color: rgba(255,255,255,0.65);
-            max-width: 340px;
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.8);
+            max-width: 400px;
             line-height: 1.8;
             margin-bottom: 36px;
         }
@@ -597,11 +598,11 @@
         }
         .footer-brand-tagline {
             font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 300;
-            color: rgba(255,255,255,0.35);
+            color: rgba(255,255,255,0.55);
             line-height: 1.8;
-            max-width: 280px;
+            max-width: 320px;
             margin-bottom: 32px;
         }
         .footer-social-row { display: flex; gap: 12px; }
@@ -645,7 +646,7 @@
             transition: color 0.3s;
             cursor: pointer;
         }
-        .footer-link:hover { color: #fff; }
+        .footer-link:hover { color: #7ec8e3; }
 
         /* Careers Section */
         .footer-careers-label {
@@ -716,7 +717,7 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-        .footer-newsletter-btn:hover { background: #78350f; }
+        .footer-newsletter-btn:hover { background: #f1babf; }
 
         /* Footer Hours Badge */
         .footer-hours-badge {
@@ -757,7 +758,7 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 10px;
             font-weight: 300;
-            color: rgba(255,255,255,0.2);
+            color: #f1babf;
             letter-spacing: 0.05em;
         }
         .footer-badge {
@@ -766,7 +767,7 @@
             font-weight: 600;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.15);
+            color: #f1babf;
             border: 1px solid rgba(255,255,255,0.08);
             padding: 6px 16px;
             border-radius: 100px;
@@ -843,14 +844,6 @@
 
     <!-- ─── PARTICLE CANVAS ─── -->
     <canvas id="particle-canvas"></canvas>
-
-    <!-- ─── NAV DOTS ─── -->
-    <div class="nav-dots">
-        <div class="dot-label active" id="dot-0">01 DEPENDABLE</div>
-        <div class="dot-label" id="dot-1">02 SEASONAL</div>
-        <div class="dot-label" id="dot-2">03 HOLIDAY</div>
-        <div class="dot-label" id="dot-3">04 THEME</div>
-    </div>
 
 
     <!-- ══════════════════════════════════════════
@@ -934,7 +927,7 @@
 
       <div style="position: absolute; bottom: -30px; right: -40px; background: #7ec8e3; color: #ffffff; padding: 35px; border-radius: 4px; z-index: 4; max-width: 320px; box-shadow: 20px 20px 0px #f2a2b1;">
         <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6; margin: 0; font-weight: 300;">
-          <strong style="color: #f2a2b1; display: block; margin-bottom: 8px; font-size: 1.1rem;">Blomer + Ossim</strong>
+          <strong style="color: #382310; display: block; margin-bottom: 8px; font-size: 1.1rem;">Blomer + Ossim</strong>
           Blomer is her dad's family name and Ossim is her mom's family name—blending the two together to bring you Blossim Donuts.
         </p>
       </div>
@@ -1118,7 +1111,7 @@
 
       <!-- BLOCK 3: Customization Banner -->
       <div class="customization-banner" style="background-color: #7ec8e3; padding: 100px 10%; margin: 0 0 80px 0; text-align: center; position: relative;">
-        <p style="text-transform: uppercase; letter-spacing: 0.15em; color: #f2a2b1; font-weight: 700; font-size: 0.9rem; margin-bottom: 20px; font-family: 'Inter', sans-serif;">
+        <p style="text-transform: uppercase; letter-spacing: 0.2em; color: #f2a2b1; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; font-family: 'Inter', sans-serif;">
           Personalized & Customized Just For You
         </p>
         <h3 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: #ffffff; line-height: 1.2; max-width: 800px; margin: 0 auto 30px auto;">
@@ -1178,7 +1171,7 @@
               <textarea name="details" rows="3" style="border: none; border-bottom: 2px solid #eee; padding: 10px 0; font-size: 1.1rem; color: #7ec8e3; background: transparent; resize: none; outline: none;" onfocus="this.style.borderColor='#f2a2b1'" onblur="this.style.borderColor='#eee'" placeholder="Special requests or questions..."></textarea>
             </div>
 
-            <button type="submit" class="hero-cta-button" style="background: #f2a2b1; color: #fff; padding: 20px 40px; width: 100%; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 1.1rem; cursor: pointer; border: none; transition: background 0.3s ease;">
+            <button type="submit" class="hero-cta-button" style="background: #f2a2b1; color: #fff; padding: 20px 40px; width: 100%; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 1.1rem; cursor: pointer; border: none; transition: background 0.3s ease;" onmouseover="this.style.background='#7ec8e3'" onmouseout="this.style.background='#f2a2b1'">
               Submit Inquiry
             </button>
 
@@ -1264,12 +1257,10 @@
 
         <div class="reveal">
             <p class="section-eyebrow">What We Make</p>
-            <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:24px;">
-                <h2 class="section-title" style="font-size: clamp(3.5rem, 6vw, 6rem);">Everyday<br>Menu</h2>
-                <p class="montserrat text-sm font-light text-[#451a03] max-w-xs" style="padding-bottom: 12px; line-height:1.8;">
-                    The classics you can count on every single day. Baked fresh each morning.
-                </p>
-            </div>
+            <h2 class="section-title" style="font-size: clamp(3.5rem, 6vw, 6rem);">Everyday<br>Menu</h2>
+            <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #451a03; margin-top: 20px; margin-bottom: 30px; max-width: 600px;">
+                The classics you can count on every single day. Baked fresh each morning.
+            </p>
             <div class="ruled-line"></div>
         </div>
 
@@ -1433,12 +1424,10 @@
 
         <div class="reveal">
             <p class="section-eyebrow">Seasonal Selection</p>
-            <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:24px;">
-                <h2 class="section-title" style="font-size: clamp(3.5rem, 6vw, 6rem);">Spring<br>Menu</h2>
-                <p class="montserrat text-sm font-light text-[#451a03] max-w-xs" style="padding-bottom: 12px; line-height:1.8;">
-                    Fresh flavors that celebrate the season. Available for a limited time.
-                </p>
-            </div>
+            <h2 class="section-title" style="font-size: clamp(3.5rem, 6vw, 6rem);">Spring<br>Menu</h2>
+            <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #451a03; margin-top: 20px; margin-bottom: 30px; max-width: 600px;">
+                Fresh flavors that celebrate the season. Available for a limited time.
+            </p>
             <div class="ruled-line"></div>
         </div>
 
@@ -1586,12 +1575,10 @@
 
         <div class="reveal">
             <p class="section-eyebrow">Beverages</p>
-            <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:24px;">
-                <h2 class="section-title" style="font-size: clamp(3.5rem, 6vw, 6rem);">What to<br>Sip</h2>
-                <p class="montserrat text-sm font-light text-[#451a03] max-w-xs" style="padding-bottom: 12px; line-height:1.8;">
-                    Specialty drinks crafted to pair perfectly with our sourdough donuts.
-                </p>
-            </div>
+            <h2 class="section-title" style="font-size: clamp(3.5rem, 6vw, 6rem);">What to<br>Sip</h2>
+            <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.8; color: #451a03; margin-top: 20px; margin-bottom: 30px; max-width: 600px;">
+                Specialty drinks crafted to pair perfectly with our sourdough donuts.
+            </p>
             <div class="ruled-line"></div>
         </div>
 
@@ -1799,7 +1786,7 @@
                 <textarea name="flavors" rows="2" style="border: none; border-bottom: 2px solid #eee; padding: 8px 0; font-size: 1rem; color: #7ec8e3; resize: none; outline: none;" onfocus="this.style.borderColor='#f2a2b1'" onblur="this.style.borderColor='#eee'" placeholder="Specific flavors, box splitting requests..."></textarea>
               </div>
 
-              <button type="submit" style="background: #7ec8e3; color: #fff; padding: 18px 40px; width: 100%; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; cursor: pointer; border: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+              <button type="submit" style="background: #f2a2b1; color: #fff; padding: 18px 40px; width: 100%; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; cursor: pointer; border: none; transition: background 0.3s ease, transform 0.3s ease;" onmouseover="this.style.background='#7ec8e3'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='#f2a2b1'; this.style.transform='translateY(0)'">
                 Submit Catering Request
               </button>
 
@@ -1903,7 +1890,10 @@
 
             <!-- Brand Column -->
             <div>
-                <div class="footer-brand-name">Blossim</div>
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                    <img src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/4326abb3-1118-43b4-4098-e7f0fc5cb700/public" alt="Blossim Logo" style="height: 50px; width: auto;">
+                    <div class="footer-brand-name">Blossim</div>
+                </div>
                 <p class="footer-brand-tagline">Slow-fermented sourdough donuts made every morning with local ingredients and zero shortcuts.</p>
                 <div class="footer-social-row">
                     <a href="https://www.instagram.com/blossimdonuts?igsh=MXA2MjdxcGEybDEwYQ==" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -1973,7 +1963,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p class="footer-legal">© 2026 Blossim Donuts. All rights reserved. Baked with intention.</p>
+            <p class="footer-legal">© 2026 Blossim Donuts. All rights reserved. Baked with intention by <a href="https://miltonhaines.com" target="_blank" style="color: #f1babf; text-decoration: underline;">MiltonHaines</a>.</p>
             <span class="footer-badge">Est. 2019 · Handmade Daily</span>
         </div>
 
@@ -2277,8 +2267,6 @@
                 scale: 0.8, opacity: 0, duration: 0.3,
                 onComplete: () => { donutImg.src = d.img; gsap.to(donutImg, { scale: 1, opacity: 1, duration: 0.5 }); }
             });
-
-            document.querySelectorAll('.dot-label').forEach((el, idx) => el.classList.toggle('active', idx === i));
         }
 
         /* ─── IDLE FLOAT ─── */
